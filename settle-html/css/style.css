@@ -501,7 +501,8 @@ button {
 /** gallery **/
 
 .gallery {
-  background: url(../images/gallery_bg.jpg);
+/*   background: url(../images/gallery_bg.jpg); */
+  background-color: whitesmoke;
   background-size: 100% 100%;
   background-repeat: no-repeat;
   background-position: center;
