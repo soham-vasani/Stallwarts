@@ -336,6 +336,15 @@ button {
   height: 100vh;
 }
 
+/* for responsive backgrounnd img. */
+@media (max-width: 768px) {
+  /* Adjust the background properties for screens up to 768px wide */
+  .full_bg {
+    background-size: contain;
+    height: auto;
+  }
+}
+
 /** end banner section **/
 
 .titlepage {
