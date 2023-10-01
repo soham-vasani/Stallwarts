@@ -501,7 +501,11 @@ button {
 /** gallery **/
 
 .gallery {
+<<<<<<< HEAD
   /* background: url(../images/gallery_bg.jpg); */
+=======
+/*   background: url(../images/gallery_bg.jpg); */
+>>>>>>> d26245c3dcab0f8f168841aaf38e6a4e33161763
   background-color: whitesmoke;
   background-size: 100% 100%;
   background-repeat: no-repeat;
