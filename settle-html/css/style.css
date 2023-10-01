@@ -983,6 +983,9 @@ ul.social_icon li a i:hover {
 
 .inner_page .logo {
   text-align: center;
+  height: 20%;
+  width: 20%;
+  margin: auto;
 }
 
 .pa_top80 {
